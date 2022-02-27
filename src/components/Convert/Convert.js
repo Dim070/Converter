@@ -29,7 +29,7 @@ function Convert() {
                         </Form.Select>
                     </Form.Group>
                 </Row>
-                <Stack direction='horizontal'>
+                <Stack direction='horizontal' className='justify-content-end'>
                     <Button className="mb-3">Convert</Button>
                 </Stack>
                 <p>1.000.000 Amount From = To 1.000.000</p>
