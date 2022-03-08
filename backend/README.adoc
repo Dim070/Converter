@@ -1,0 +1,78 @@
+= Backend server for frontend test task
+
+== Install
+
+[source, shell]
+----
+$ cd backend
+$ npm install
+$ npm start
+----
+
+Open http://127.0.0.1:4000 for start page of backend server
+
+image::images/backend.png[align=center]
+
+== Endpoints
+
+- `/currencies` - returns list of currentcies with name
+
+[source,json]
+.http://127.0.0.1:4000/currencies
+----
+[
+  {
+    "id": "USD",
+    "name": "US Dollar"
+  },
+  {
+    "id": "EUR",
+    "name": "Euro"
+  },
+  {
+    "id": "RUB",
+    "name": "Russian Ruble"
+  },
+  {
+    "id": "JPY",
+    "name": "Japanese Yen"
+  },
+  {
+    "id": "CHF",
+    "name": "Swiss Franc"
+  },
+  {
+    "id": "CNY",
+    "name": "Chinese Yuan"
+  }
+]
+----
+
+- `/rates` - return all available exchange rates
+
+- `/rate/:id` return rate for specific currency
+
+[source,json]
+.http://127.0.0.1:4000/rate/USD 
+----
+[
+  {
+    "id": "USD",
+    "rates": {
+      "EUR": 0.8812,
+      "RUB": 76.7962,
+      "JPY": 115.36,
+      "CHF": 0.9255,
+      "CNY": 6.3606
+    }
+  }
+]
+----
+
+NOTE: not all currencies has presized rate, only *USD*, *EUR* and *RUB*.
+
+You have 2 ways here:
+
+- use only them in project
+- _Advanced_ - make cross calculation via USD rate (for example: JPY -> USD -> CNY) if direct exchange rate is absent
+

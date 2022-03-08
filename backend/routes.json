@@ -1,0 +1,3 @@
+{
+  "/rate/:id": "/rates?id=:id"
+}

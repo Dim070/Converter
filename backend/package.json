@@ -1,0 +1,11 @@
+{
+    "name": "Frontend-backend",
+    "version": "1.0.0",
+    "description": "Frontend-backend is the ultimate backend solution",
+    "scripts": {
+        "start": "json-server --watch db.json --routes routes.json --id id --port 4000"
+    },
+    "dependencies": {
+        "json-server": "^0.17.0"
+    }
+}
